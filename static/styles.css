@@ -1,0 +1,144 @@
+body {
+    font-family: 'nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1e;
+    color: #f1f1f1;
+}
+  
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #156394;
+    top: 0;
+    z-index: 100;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+    padding: 4px 0.5rem; /* Add padding to create space on the left side */
+}
+  
+.header-content h1 {
+  color: #f1f1f1; /* Change the color of the text */
+  font-size: 1.3rem; /* Increase the font size */
+  letter-spacing: 1px; /* Add letter spacing */
+  margin: 0;
+  padding-left: 0.7rem;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(203px, 203px));
+    grid-gap: 17px;
+    padding: 20px;
+    border-radius: 4px;
+    justify-content: center;
+}
+  
+.image-grid img {
+    object-fit: cover;
+    border-radius: 7px;
+    transition: transform 0.3s;
+}
+
+.image-grid img:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.93);
+    align-items: center;
+    justify-content: center;
+}
+  
+.modal-content {
+    position: relative;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+}
+  
+.close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: lighter;
+    transition: 0.3s;
+    border-radius: 50%;
+    line-height: 1;
+    padding: 0 0.25rem;
+}
+  
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transition: left 0.3s;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.sidebar li {
+    margin-bottom: 20px;
+}
+  
+.sidebar a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#sidebar-toggle-btn {
+    left: 5px;
+    right: 5px;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    position: header;
+    display: block;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    transition: 0.3s;
+    color: white;
+}
+
+#sidebar-toggle-btn:hover {
+    background-color: #1e7bb6;
+}
