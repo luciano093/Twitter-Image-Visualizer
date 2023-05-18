@@ -1,5 +1,5 @@
 [package]
-name = "twitter_image_aggregator"
+name = "twitter_image_visualizer"
 version = "0.1.0"
 edition = "2021"
 
