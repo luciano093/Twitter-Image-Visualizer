@@ -10,10 +10,8 @@ mod twitter_api;
 
 use twitter_api::{fetch_rest_id, get_media, fetch_guest_token};
 
-
-#[get("/")]
 async fn index() -> impl Responder {
-    let mut site = File::open("./website/index.html").unwrap();
+    let mut site = File::open("./static/index.html").unwrap();
     let mut site_html = String::new();
     site.read_to_string(&mut site_html).unwrap();
 
@@ -142,6 +140,8 @@ async fn main() -> std::io::Result<()> {
             .app_data(web::Data::clone(&client))
             .service(get_user_media)
         )
+        .route("/", web::get().to(index))
+        .route("/home", web::get().to(index))
         .service(styles)
         .service(request)
         .service(sidebar)

@@ -146,4 +146,9 @@ const main = async () => {
     });
 }
 
-main();
+if (window.location.pathname != "/home" &&
+    window.location.pathname != "" &&
+    window.location.pathname != "/"
+){
+    main();
+}
